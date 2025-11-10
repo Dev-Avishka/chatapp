@@ -9,7 +9,6 @@ func start(c *gin.Context) {
 	})
 }
 
-// this is a POST method that will get Have a Message object in the body
 func AddToChat(c *gin.Context) {
 	var newMessage Message
 	if err := c.BindJSON(&newMessage); err != nil {

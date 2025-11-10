@@ -3,7 +3,7 @@ package main
 //this file will contain struct definitions
 
 type Message struct {
-	id       int
-	content  string
-	username string
+	ID       int    `json:"id"`
+	Content  string `json:"content"`
+	UserName string `json:"UserName"`
 }
