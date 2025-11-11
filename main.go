@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	r := gin.Default()
+	r.Use(cors.Default())
 
 	Get(r)
 	Post(r)
