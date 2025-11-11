@@ -59,3 +59,11 @@ func GetLastObject() Message {
 	}
 	return messages[len(messages)-1]
 }
+
+func GetLastID() int {
+	messages := ReadJSON()
+	if len(messages) == 0 {
+		return -1
+	}
+	return messages[len(messages)-1].ID
+}

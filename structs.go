@@ -7,3 +7,8 @@ type Message struct {
 	Content  string `json:"content"`
 	UserName string `json:"UserName"`
 }
+
+type ReqMessage struct {
+	Content  string `json:"content"`
+	UserName string `json:"UserName"`
+}

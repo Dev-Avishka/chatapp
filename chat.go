@@ -10,14 +10,20 @@ func start(c *gin.Context) {
 }
 
 func AddToChat(c *gin.Context) {
-	var newMessage Message
+	var newMessage ReqMessage
 	if err := c.BindJSON(&newMessage); err != nil {
 		c.JSON(400, gin.H{
 			"error": "Invalid JSON",
 		})
 		return
 	}
-	if err := AppendJSON(newMessage); err != nil {
+	var lastID = GetLastID()
+	var finalNewMessage = Message{
+		ID:       lastID + 1,
+		Content:  newMessage.Content,
+		UserName: newMessage.UserName,
+	}
+	if err := AppendJSON(finalNewMessage); err != nil {
 		c.JSON(500, gin.H{
 			"error": "Could not save message",
 		})
