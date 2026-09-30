@@ -15,3 +15,5 @@ chmod +x buildanddeploy.sh
 ./buildanddeploy.sh
 ```
 
+## Reason to Build this
+Created and Configured my own hardware for a server running on Linux and wanted to check its capabilities, By allowing this to be public for several hours and letting the public use the site, and shut down when the server crashed
